@@ -34,13 +34,13 @@ GitHub uses a service called [camo](https://docs.github.com/en/authentication/ke
 
 <!-- NONCE -->
 ```markdown
-[![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true&nonce=019757)](https://github.com/hesreallyhim)
+[![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true&nonce=014888)](https://github.com/hesreallyhim)
 ```
 
 
-[![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true&nonce=019757)](https://github.com/hesreallyhim)
+[![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true&nonce=014888)](https://github.com/hesreallyhim)
 
-**Cache-busting status:** `nonce=019757` | Last updated: `2025-11-06 16:25:48 UTC`
+**Cache-busting status:** `nonce=014888` | Last updated: `2025-11-06 16:52:47 UTC`
 <!-- NONCE-END -->
 
 
