@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Check if issue body contains "nonce"
         id: check-nonce
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          ISSUE_BODY="${{ github.event.issue.body }}"
           if echo "$ISSUE_BODY" | grep -qi "nonce"; then
             echo "contains_nonce=true" >> $GITHUB_OUTPUT
             echo "Issue body contains 'nonce' - proceeding"
@@ -36,9 +37,10 @@ jobs:
           echo "Generated new nonce: $NEW_NONCE"
 
           # Find and replace nonce=NNNNNN pattern with new nonce
-          PATTERN='/<!-- NONCE -->/,/<!-- NONCE-END -->/'
-          REPLACEMENT='s/nonce=[0-9]\{6\}/nonce='"$NEW_NONCE"'/g'
-          sed -i "${PATTERN}${REPLACEMENT}" README.md
+          # Only within the NONCE section markers
+          NONCE_PATTERN='/<!-- NONCE -->/,/<!-- NONCE-END -->/'
+          NONCE_REPLACEMENT='s/nonce=[0-9]\{6\}/nonce='"$NEW_NONCE"'/g'
+          sed -i "${NONCE_PATTERN}${NONCE_REPLACEMENT}" README.md
 
           echo "Updated README.md with new nonce value"
 
