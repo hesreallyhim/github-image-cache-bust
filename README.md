@@ -17,9 +17,12 @@ GitHub uses a service called [camo](https://docs.github.com/en/authentication/ke
 > [!tip]
 > Create a new Issue in the repo. Do **not** include the word "nonce" anywhere in the body. See if and when the count on the card is actually updated.
 
-<div id="baseline">
+```markdown
 [![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true)](https://github.com/hesreallyhim)
-</div>
+```
+
+<!-- BASELINE -->
+[![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true)](https://github.com/hesreallyhim)
 
 
 ## 2. Nonce Query Parameter (image URL contains "nonce" query-parameter with random numerical value)
@@ -29,8 +32,8 @@ GitHub uses a service called [camo](https://docs.github.com/en/authentication/ke
 > [!tip]
 > The image URL below contains a query parameter `nonce` with a random number value. Create an Issue in this repository and write the word "nonce" somewhere in the body. This will trigger a GitHub Action that changes the query parameter value to some other "random" number. This is used to test whether changing query parameters is sufficient to bust the cache and refresh the image content.
 
-<div id="baseline">
+<!-- NONCE -->
 [![test-github-cache-bust](https://github-readme-stats-plus-theta.vercel.app/api/pin?username=hesreallyhim&repo=test-github-cache-bust&show_issues=true&nonce=123456)](https://github.com/hesreallyhim)
-</div>
+
 
 
