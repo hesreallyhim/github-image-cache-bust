@@ -8,6 +8,9 @@ name: Update Nonce on Issue Open
 jobs:
   update-nonce:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
 
     steps:
       - name: Check if issue body contains "nonce"
