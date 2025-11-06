@@ -50,10 +50,8 @@ jobs:
           sed -i "${NONCE_PATTERN}${NONCE_REPLACEMENT}" README.md
 
           # Update the timestamp in the visual indicator
-          TS_PATTERN='/<!-- NONCE -->/,/<!-- NONCE-END -->/'
-          TS_REPL='s/Last updated: `[^`]*`/'
-          TS_REPL="${TS_REPL}Last updated: \`$TIMESTAMP\`/g"
-          sed -i "${TS_PATTERN}${TS_REPL}" README.md
+          TS_REPL='s/Last updated: `[^`]*`/Last updated: `'"$TIMESTAMP"'`/g'
+          sed -i "${NONCE_PATTERN}${TS_REPL}" README.md
 
           echo "Updated README.md with new nonce value and timestamp"
 
