@@ -1,4 +1,4 @@
-# test-github-cache-bust
+# github-image-cache-bust
 
 ## Demo repo for testing/validating the behavior of GitHub's image-caching service (camo)
 
