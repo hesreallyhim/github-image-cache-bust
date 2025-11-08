@@ -47,7 +47,7 @@ GitHub uses a service called [camo](https://docs.github.com/en/authentication/ke
 
 ---
 
-[^1] Nowadays, an "image with dynamic content" is usuaully known as a "movie" (or, if you haven't heard of that, it's sort of like a "TikTok" but not as hilarious)... that's not really what I meant though - I should have said something like "an image that's fetched from a URL that points to a server that changes the contents of the image that being served dynamically." As you can probably tell, I've read many many long books (or, if you haven't heard of that, it's sort of like a "post" but not as profound).
+[^1]: Nowadays, an "image with dynamic content" is usuaully known as a "movie" (or, if you haven't heard of that, it's sort of like a "TikTok" but not as hilarious)... that's not really what I meant though - I should have said something like "an image that's fetched from a URL that points to a server that changes the contents of the image that being served dynamically." As you can probably tell, I've read many many long books (or, if you haven't heard of that, it's sort of like a "post" but not as profound).
 
 ---
 
