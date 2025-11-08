@@ -33,11 +33,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Issue created-at time
+        if: steps.check-nonce.outputs.contains_nonce == 'true'
+        id: update-timestamp
         run: |
-          # Update the "Last Issue create at" time
+          # Update the "Last Issue created at" time
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+          echo "Generated timestamp: $TIMESTAMP"
           
-          
+          # Update the timestamp in the baseline section
+          sed -i 's/Last Issue created at: `[^`]*`/Last Issue created at: `'"$TIMESTAMP"'`/g' README.md
+          echo "Updated README.md with new timestamp in baseline section"
+
 
       - name: Update nonce in README
         if: steps.check-nonce.outputs.contains_nonce == 'true'
@@ -46,9 +53,9 @@ jobs:
           NEW_NONCE=$(printf "%06d" $((RANDOM % 1000000)))
           echo "Generated new nonce: $NEW_NONCE"
 
-          # Get current timestamp in UTC
-          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          echo "Current timestamp: $TIMESTAMP"
+          # Reuse timestamp from previous step
+          TIMESTAMP="${{ steps.update-timestamp.outputs.timestamp }}"
+          echo "Using timestamp from previous step: $TIMESTAMP"
 
           # Find and replace nonce=NNNNNN pattern with new nonce
           # Only within the NONCE section markers
